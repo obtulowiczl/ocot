@@ -34,24 +34,24 @@ IniWrite, 45, ocot.ini, config, setDniOC
 IniWrite, 7, ocot.ini, config, setDniBT
 }
 Menu, Tray, NoStandard
-Menu, Tray, Add, Pokaø OCOT, restore
-Menu, Tray, Default, Pokaø OCOT
+Menu, Tray, Add, Poka≈º OCOT, restore
+Menu, Tray, Default, Poka≈º OCOT
 Menu, Tray, Click, 1
-Menu, Tray, Tip, Przypominacz OCOT - OC/Przeglπdy pojazdÛw
+Menu, Tray, Tip, Przypominacz OCOT - OC/PrzeglƒÖdy pojazd√≥w
 
 Gui, Main: New, , Przypominacz OCOT
 Gui, Add, StatusBar,,
 Gui, Font, s10
-Gui, Add, ListView, w580 h380 vReminderListView g_ReminderList, SamochÛd|Rejestracja|OC wazne do:|BT waøne do:
+Gui, Add, ListView, w580 h380 vReminderListView g_ReminderList, Samoch√≥d|Rejestracja|OC wazne do:|BT wa≈ºne do:
 LV_ModifyCol(1, "+center 265")
 LV_ModifyCol(2, "+center 90")
 LV_ModifyCol(3, "+center 110")
 LV_ModifyCol(4, "+center 110")
 Gui, Font, Normal
-Gui, Add, Button, h25 w140 x5 y400 vButtonDelete g_DeleteRow, UsuÒ wybrany pojazd
+Gui, Add, Button, h25 w140 x5 y400 vButtonDelete g_DeleteRow, Usu≈Ñ wybrany pojazd
 Gui, Add, Button, h25 w140 x+7 yp vButtonAdd g_AddCar, Dodaj nowy pojazd
 Gui, Font, Bold s10
-Gui, Add, Button, h25 w225 x+7 yp vButtonUpcoming g_GetUpcoming, Pokaø nadchodzπce terminy
+Gui, Add, Button, h25 w225 x+7 yp vButtonUpcoming g_GetUpcoming, Poka≈º nadchodzƒÖce terminy
 Gui, Font, Normal s7
 Gui, Add, Button, h25 w60 x+10 yp vButtonOptions g_Settings , Ustawienia
 SB_SetParts(300,300)
@@ -66,14 +66,14 @@ _TrayInfo() {
 	global
 if (incoming3 <= SetDniOC) OR (incoming4 <= SetDniBT)
 {
-	TrayTip,UWAGA!,WkrÛtce trzeba przed≥uøyÊ OC/BT. `nSzczegÛ≥y w komunikacie., 5, 2
+	TrayTip,UWAGA!,Wkr√≥tce trzeba przed≈Çu≈ºyƒá OC/BT. `nSzczeg√≥≈Çy w komunikacie., 5, 2
 	_GetUpcoming()
 }
 }
 
 _AddCar() {
 Gui, Dodaj: New, ,Dodawanie nowego pojazdu
-Gui, Add, Text, x10 yp+10, SamochÛd:
+Gui, Add, Text, x10 yp+10, Samoch√≥d:
 Gui, Font, Bold
 Gui, Add, Edit, +center x+100 yp-5 w250 h20 vCarModel,
 Gui, Font, Normal
@@ -81,12 +81,12 @@ Gui, Add, Text, x10 yp+36, Numer rejestracyjny:
 Gui, Font, Bold
 Gui, Add, Edit, +center yp-5  x+60 w250 h20 vCarPlate,
 Gui, Font, Normal
-Gui, Add, Text, x10 yp+40, Polisa OC waøna do:
+Gui, Add, Text, x10 yp+40, Polisa OC wa≈ºna do:
 Gui, Font, Bold
 Gui, Add, DateTime, x+58 yp-5 w280 vdataOC ChooseNone , dddd dd/MM/yyyy 'roku'
 Gui, Add, Button, x10 yp+30 w435 g_CopyDateOCtoBT, Koniec BT wtedy co koniec OC.
 Gui, Font, Normal
-Gui, Add, Text, x10 yp+35, Badanie techniczne waøne do:
+Gui, Add, Text, x10 yp+35, Badanie techniczne wa≈ºne do:
 Gui, Font, Bold
 Gui, Add, DateTime, x+10 yp-5 w280 vdataBT ChooseNone , dddd dd/MM/yyyy 'roku'
 Gui, Add, Button, h25 w350 x10 yp+35 g_AddCarSave +Default, Zapisz
@@ -109,15 +109,15 @@ _Settings() {
 	global
 Gui, OCOTSetting: Destroy
 Gui, OCOTSetting: Font, s10
-Gui, OCOTSetting: Add, Text, x10 y10 ,Informuj o koÒczπcych siÍ OC:
+Gui, OCOTSetting: Add, Text, x10 y10 ,Informuj o ko≈ÑczƒÖcych siƒô OC:
 Gui, OCOTSetting: Add, Edit, yp-2 x+5 w35 +center vSettingsOC , %SetDniOC%
-Gui, OCOTSetting: Add, Text, yp+2 x+2 , dni wczeúniej.
+Gui, OCOTSetting: Add, Text, yp+2 x+2 , dni wcze≈õniej.
 
-Gui, OCOTSetting: Add, Text, x10 y+20 ,Informuj o koÒczπcych siÍ BT:
+Gui, OCOTSetting: Add, Text, x10 y+20 ,Informuj o ko≈ÑczƒÖcych siƒô BT:
 Gui, OCOTSetting: Add, Edit, yp-2 x+5 w35 +center vSettingsBT , %SetDniBT%
-Gui, OCOTSetting: Add, Text, yp+2 x+2 , dni wczeúniej.
+Gui, OCOTSetting: Add, Text, yp+2 x+2 , dni wcze≈õniej.
 Gui, OCOTSetting: Add, Button, x10 yp+30 w330 g_SaveSettings Default,ZAPISZ USTAWIENIA
-Gui, OCOTSetting: Add, Button, x10 yp+30 w330 g_Exit,ZAKO—CZ PROGRAM (wy≥πcza powiadomienia!)
+Gui, OCOTSetting: Add, Button, x10 yp+30 w330 g_Exit,ZAKO≈ÉCZ PROGRAM (wy≈ÇƒÖcza powiadomienia!)
 Gui, OCOTSetting: Show, AutoSize
 }
 
@@ -187,7 +187,7 @@ Loop
     RowNumber := LV_GetNext(RowNumber)  ; Resume the search at the row after that found by the previous iteration.
     if not RowNumber  ; The above returned zero, so there are no more selected rows.
         break
-	MsgBox, 292, Potwierdü usuniÍcie, Czy na pewno chcesz usunπÊ zaznaczony pojazd?
+	MsgBox, 292, Potwierd≈∫ usuniƒôcie, Czy na pewno chcesz usunƒÖƒá zaznaczony pojazd?
 		IfMsgBox, Yes
 			LV_Delete(RowNumber)
 }
@@ -209,7 +209,7 @@ OCdataRow := StrReplace(OCdataRow, "/")
 LV_GetText(BTdataRow, A_EventInfo, 4)
 BTdataRow := StrReplace(BTdataRow, "/")
 Gui, Edytuj: New, ,Edytowanie pojazdu
-Gui, Add, Text, x10 yp+10, SamochÛd:
+Gui, Add, Text, x10 yp+10, Samoch√≥d:
 Gui, Font, Bold
 Gui, Add, Edit, +center x+100 yp-5 w250 h20 vCarModel, %CarModelRow%
 Gui, Font, Normal
@@ -217,12 +217,12 @@ Gui, Add, Text, x10 yp+36 , Numer rejestracyjny:
 Gui, Font, Bold
 Gui, Add, Edit, +center yp-5  x+60 w250 h20 vCarPlate, %CarPlateRow%
 Gui, Font, Normal
-Gui, Add, Text, x10 yp+40, Polisa OC waøna do:
+Gui, Add, Text, x10 yp+40, Polisa OC wa≈ºna do:
 Gui, Font, Bold
 Gui, Add, DateTime, +center x+58 yp-5 w280 vdataOC Choose%OCdataRow% , dddd	dd/MM/yyyy 'roku'
 Gui, Add, Button, x10 yp+30 w435 g_CopyDateOCtoBT, Koniec BT wtedy co koniec OC.
 Gui, Font, Normal
-Gui, Add, Text, x10 yp+35, Badanie techniczne waøne do:
+Gui, Add, Text, x10 yp+35, Badanie techniczne wa≈ºne do:
 Gui, Font, Bold
 Gui, Add, DateTime, x+10 yp-5 w280 vdataBT Choose%BTdataRow% , dddd	dd/MM/yyyy 'roku'
 Gui, Add, Button, h25 w350 x10 yp+35 g_ModifyCarSave +Default, Zapisz
@@ -259,11 +259,11 @@ _GetUpcoming() {
 global
 Gui, Upcoming: Destroy
 Gui, Upcoming: Font, s10 bold
-Gui, Upcoming: Add, Text, , Wygasajπce polisy OC w najbliøyszym czasie (%SetDniOC% dni):
+Gui, Upcoming: Add, Text, , WygasajƒÖce polisy OC w najbli≈ºyszym czasie (%SetDniOC% dni):
 
 LV_ModifyCol(3, "Sort")
 listOC =
-listBT = Badanie techniczne koÒczy siÍ w:
+listBT = Badanie techniczne ko≈Ñczy siƒô w:
 m := 1
 Gui, Upcoming: Font, normal
 Loop % LV_GetCount() {
@@ -286,7 +286,7 @@ m+=1
 	}
 
 Gui, Upcoming: Font, s10 bold
-Gui, Upcoming: Add, Text, x10 yp+45, KoÒczπce siÍ badania techniczne (najbliøsze %SetDniBT% dni):
+Gui, Upcoming: Add, Text, x10 yp+45, Ko≈ÑczƒÖce siƒô badania techniczne (najbli≈ºsze %SetDniBT% dni):
 Gui, Upcoming: Font, s10 normal
 
 LV_ModifyCol(4, "Sort")
@@ -309,7 +309,7 @@ Loop % LV_GetCount() {
 	m+=1
 	}
 Gui, Upcoming: -MinimizeBox
-Gui, Upcoming: Show, AutoSize, Wygasajπce polisy / koÒczπce siÍ badania:
+Gui, Upcoming: Show, AutoSize, WygasajƒÖce polisy / ko≈ÑczƒÖce siƒô badania:
 _sortList()
 }
 
@@ -320,8 +320,8 @@ _sortList() {
 	czas := A_YYYY A_MM A_DD
 
 	LV_ModifyCol(3, "Sort")
-		SB_SetText("Brak wprowadzonych samochodÛw.", 1)
-		SB_SetText("Dodaj pojazdy do bazy aby program dzia≥a≥ prawid≥owo.", 2)
+		SB_SetText("Brak wprowadzonych samochod√≥w.", 1)
+		SB_SetText("Dodaj pojazdy do bazy aby program dzia≈Ça≈Ç prawid≈Çowo.", 2)
 if (LV_GetCount() > 0)
 {
 	LV_GetText(OCSort, 1, 3)
@@ -330,7 +330,7 @@ if (LV_GetCount() > 0)
 	LV_GetText(incomingOC3, 1, 3)
 	incoming3 := StrReplace(incomingOC3, "/")
 	EnvSub, incoming3, %czas%, days
-		SB_SetText("Najbliøsza p≥atnoúÊ OC za " incoming3 " dni ("incomingOC1 A_Space incomingOC2 ")", 1)
+		SB_SetText("Najbli≈ºsza p≈Çatno≈õƒá OC za " incoming3 " dni ("incomingOC1 A_Space incomingOC2 ")", 1)
 }
 
 	LV_ModifyCol(4, "Sort")
@@ -342,7 +342,7 @@ if (LV_GetCount() > 0)
 	LV_GetText(BTSort, 1, 4)
 	incoming4 := StrReplace(incomingBT3, "/")
 	EnvSub, incoming4, %czas%, days
-	SB_SetText("Najbliøsze BT za " incoming4 " dni ("incomingBT1 A_Space incomingBT2 ")", 2)
+	SB_SetText("Najbli≈ºsze BT za " incoming4 " dni ("incomingBT1 A_Space incomingBT2 ")", 2)
 }
 
 If (OCSort < BTSort)
